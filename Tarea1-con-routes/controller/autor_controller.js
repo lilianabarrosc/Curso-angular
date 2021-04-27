@@ -42,6 +42,8 @@ const actualizar = (req, res) => {
 // Borrar autor
 //===============
 const eliminar = (req, res) => {
+    const id = req.param.id;
+    
     res.json({
         messaje: "Eliminado"
     });

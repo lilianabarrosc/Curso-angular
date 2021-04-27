@@ -3,7 +3,7 @@ const express = require('express');
 const { listar,
     guardar,
     actualizar,
-    eliminar} = require ('../controller/autor_controller');
+    eliminar} = require ('../../controller/autor_controller');
 
 //se define router
  const router = express.Router();
