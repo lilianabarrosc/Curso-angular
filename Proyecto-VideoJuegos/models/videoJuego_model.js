@@ -4,11 +4,11 @@ var Schema = mongoose.Schema;
 var schemaVideoJuego = new Schema({
   consola: {
     type: String,
-    required: true
+    required: 'Nombre consola requerido'
   },
   nombre: {
     type: String,
-    required: true
+    required: 'Nombre video juego requerido'
   },
   genero: {
     type: String,
@@ -20,7 +20,7 @@ var schemaVideoJuego = new Schema({
   },
   descripcion: {
     type: String,
-    required: true
+    required: 'Descripción video juego requerido'
   },
   distribuidor: {
     type: String,
@@ -32,8 +32,41 @@ var schemaVideoJuego = new Schema({
   },
   poster: {
     type: String
+  },
+  disponible: {
+    type: Boolean,
+    default: true
   }
 });
+
+/** validaciones a referencias de genero, clasificacion, distribuidor, desarrollador **/
+schemaProducto.path('genero').validate(
+  {
+    validator: genero,
+    message : 'Genero indicado no Existe!'
+  }
+);
+
+schemaProducto.path('clasificacion').validate(
+  {
+    validator: clasificacion,
+    message : 'Clasificacion indicado no Existe!'
+  }
+);
+
+schemaProducto.path('distribuidor').validate(
+  {
+    validator: distribuidor,
+    message : 'Distribuidor indicado no Existe!'
+  }
+);
+
+schemaProducto.path('desarrollador').validate(
+  {
+    validator: desarrollador,
+    message : 'Desarrollador indicado no Existe!'
+  }
+);
 
 const model = mongoose.model("modelVideoJuego", schemaVideoJuego);
 

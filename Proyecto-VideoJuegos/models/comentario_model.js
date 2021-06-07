@@ -30,6 +30,21 @@ var schemaComentario = new Schema({
   }
 });
 
+/** validaciones a referencias de usuario y videoJuego **/
+schemaProducto.path('usuario').validate(
+  {
+    validator: usuario,
+    message : 'Usuario debe existir!'
+  }
+);
+
+schemaProducto.path('videoJuego').validate(
+  {
+    validator: videoJuego,
+    message : 'Video Juego debe existir!'
+  }
+);
+
 schemaComentario.methods.addUser = function (docUsuario) {
   if (!this.usuario) {
     this.usuario = {
