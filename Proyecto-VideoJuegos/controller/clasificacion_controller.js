@@ -16,7 +16,7 @@ function errorHandler(data, next, err = null) {
 }
 
 /** Listar Clasificacion **/
-function listar(req, res) {
+function listar(req, res, next) {
     //se buscan todas las clasificaciones existentes en la bd
     ModelClasificacion.find().exec((err, items) => {
     if (err || !items) return errorHandler(items, next, err);
@@ -29,7 +29,7 @@ function listar(req, res) {
 
 
 /**	Get por Id Clasificacion **/
-function getClasificacion(req, res) {
+function getClasificacion(req, res, next) {
   let id = req.params.id; // se busca clasificaciones por su id
 
   ModelClasificacion.findById(id, (err, docClasificacion) => {
@@ -63,7 +63,7 @@ function guardar(req, res, next) {
 }
 
 /** Borrar Clasificacion **/
-function borrar(req, res) {
+function borrar(req, res, next) {
   const id = req.params.id; // se elimina una clasificacion mediante el id 
   ModelClasificacion.findByIdAndRemove(id, (err, docClasificacion) => {
     if (err || !docClasificacion) return errorHandler(docClasificacion, next, err);
@@ -77,7 +77,7 @@ function borrar(req, res) {
 //==========
 //	Actualizar clasificacion
 //==========
-function update(req, res) {
+function update(req, res, next) {
   const id = req.params.id; // se actualiza clasificacion mediante su id
 
   let data = {

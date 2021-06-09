@@ -3,10 +3,12 @@ var mongoose = require("mongoose");
 var schemaClasificacion = mongoose.Schema({
   nombre: {
     type: String,
-    unique: "xxxx"
+    unique: "xxxx",
+    required: true
   },
   descripcion: {
     type: String,
+    required: true
   },
 });
 
