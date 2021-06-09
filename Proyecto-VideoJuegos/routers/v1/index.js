@@ -1,10 +1,14 @@
 const clasificacionRouter = require('./clasificacion_router');
 const desarrolladorRouter = require('./desarrollador_router');
+const distribuidorRouter = require('./distribuidor_router');
+const generoRouter = require('./genero_router');
 
 var ruteApi = '/api/v1';
 module.exports = (app) =>{
 
   app.use(ruteApi, clasificacionRouter);
   app.use(ruteApi, desarrolladorRouter);
+  app.use(ruteApi, distribuidorRouter);
+  app.use(ruteApi, generoRouter);
 
 }
