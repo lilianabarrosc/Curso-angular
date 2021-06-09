@@ -16,7 +16,7 @@ function errorHandler(data, next, err = null) {
 }
 
 /** Listar Desarrollador **/
-function listar(req, res) {
+function listar(req, res, next) {
     //se buscan todas los desarrolladores existentes en la bd
     ModelDesarrollador.find().exec((err, items) => {
     if (err || !items) return errorHandler(items, next, err);
@@ -29,7 +29,7 @@ function listar(req, res) {
 
 
 /**	Get por Id Desarrollador **/
-function getDesarrollador(req, res) {
+function getDesarrollador(req, res, next) {
   let id = req.params.id; // se busca desarrollador por su id
 
   ModelDesarrollador.findById(id, (err, docDesarrollador) => {
@@ -62,7 +62,7 @@ function guardar(req, res, next) {
 }
 
 /** Borrar Desarrollador **/
-function borrar(req, res) {
+function borrar(req, res, next) {
   const id = req.params.id; // se elimina un desarrollador mediante el id 
   ModelDesarrollador.findByIdAndRemove(id, (err, docDesarrollador) => {
     if (err || !docDesarrollador) return errorHandler(docDesarrollador, next, err);
@@ -76,7 +76,7 @@ function borrar(req, res) {
 //==========
 //	Actualizar Desarrollador
 //==========
-function update(req, res) {
+function update(req, res, next) {
   const id = req.params.id; // se actualiza Desarrollador mediante su id
 
   let data = {

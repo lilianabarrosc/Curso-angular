@@ -18,7 +18,7 @@ function errorHandler(data, next, err = null) {
 }
 
 /** Listar Cometarios x videoJuego **/
-function listarXVideoJuego(req, res) {
+function listarXVideoJuego(req, res, next) {
   let videoJuegoId = req.body.videoJuegoId; //id del videojuego
   let query =
     videoJuegoId != "undefined" ? { "videoJuego.id": videoJuegoId } : {};
@@ -79,7 +79,7 @@ function guardar(req, res, next) {
 }
 
 /** Borrar comentario **/
-function borrar(req, res) {
+function borrar(req, res, next) {
   const idComentario = req.params.idComentario; // se elimina un comenatrio mediante el id
   const idUsuario = req.params.idUsuario; //solo el usuario que realiza el comentario lo puede eliminar
 

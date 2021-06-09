@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var schemaDesarrollador = new Schema({
   nombre: {
     type: String,
-    unique: "xxxx"
+    unique: "xxxx",
+    required: true
   }
 });
 

@@ -16,7 +16,7 @@ function errorHandler(data, next, err = null) {
 }
 
 /** Listar Distribuidor **/
-function listar(req, res) {
+function listar(req, res, next) {
     //se buscan todas los distribuidor existentes en la bd
     ModelDistribuidor.find().exec((err, items) => {
     if (err || !items) return errorHandler(items, next, err);
@@ -29,7 +29,7 @@ function listar(req, res) {
 
 
 /**	Get por Id Distribuidor **/
-function getDistribuidor(req, res) {
+function getDistribuidor(req, res, next) {
   let id = req.params.id; // se busca distribuidor por su id
 
   ModelDistribuidor.findById(id, (err, docDistribuidor) => {
@@ -62,7 +62,7 @@ function guardar(req, res, next) {
 }
 
 /** Borrar Distribuidor **/
-function borrar(req, res) {
+function borrar(req, res, next) {
   const id = req.params.id; // se elimina un distribuidor mediante el id 
   ModelDistribuidor.findByIdAndRemove(id, (err, docDistribuidor) => {
     if (err || !docDistribuidor) return errorHandler(docDistribuidor, next, err);
@@ -76,7 +76,7 @@ function borrar(req, res) {
 //==========
 //	Actualizar Distribuidor
 //==========
-function update(req, res) {
+function update(req, res, next) {
   const id = req.params.id; // se actualiza Distribuidor mediante su id
 
   let data = {

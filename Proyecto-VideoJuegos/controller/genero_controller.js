@@ -16,7 +16,7 @@ function errorHandler(data, next, err = null) {
 }
 
 /** Listar Genero **/
-function listar(req, res) {
+function listar(req, res, next) {
     //se buscan todos los generos existentes en la bd
     ModelGenero.find().exec((err, items) => {
     if (err || !items) return errorHandler(items, next, err);
@@ -29,7 +29,7 @@ function listar(req, res) {
 
 
 /**	Get por Id Genero **/
-function getGenero(req, res) {
+function getGenero(req, res, next) {
   let id = req.params.id; // se busca generos por su id
 
   ModelGenero.findById(id, (err, docGenero) => {
@@ -63,7 +63,7 @@ function guardar(req, res, next) {
 }
 
 /** Borrar Genero **/
-function borrar(req, res) {
+function borrar(req, res, next) {
   const id = req.params.id; // se elimina un genero mediante el id 
   ModelGenero.findByIdAndRemove(id, (err, docGenero) => {
     if (err || !docGenero) return errorHandler(docGenero, next, err);
@@ -77,7 +77,7 @@ function borrar(req, res) {
 //==========
 //	Actualizar genero
 //==========
-function update(req, res) {
+function update(req, res, next) {
   const id = req.params.id; // se actualiza genero mediante su id
 
   let data = {

@@ -16,7 +16,7 @@ function errorHandler(data, next, err = null) {
 }
 
 /** Listar Usuario **/
-function listar(req, res) {
+function listar(req, res, next) {
   //se buscan todos los usuarios existentes en la bd
   ModelUsuario.find().select('-contrasenia, -favoritos').exec((err, items) => {
     if (err || !items) return errorHandler(items, next, err);
@@ -28,7 +28,7 @@ function listar(req, res) {
 }
 
 /**	Get por Id Usuario **/
-function getUsuario(req, res) {
+function getUsuario(req, res, next) {
   let id = req.params.id; // se busca usuarios por su id
 
   ModelUsuario.findById(id, (err, docUsuario) => {
@@ -66,7 +66,7 @@ function guardar(req, res, next) {
 }
 
 /** Borrar Usuario **/
-function borrar(req, res) {
+function borrar(req, res, next) {
   const id = req.params.id; // se elimina una usuario mediante el id
   ModelUsuario.findByIdAndRemove(id, (err, docUsuario) => {
     if (err || !docUsuario)
@@ -82,7 +82,7 @@ function borrar(req, res) {
 //==========
 //	Actualizar usuario
 //==========
-function update(req, res) {
+function update(req, res, next) {
   const id = req.params.id; // se actualiza usuario mediante su id
 
   let data = {

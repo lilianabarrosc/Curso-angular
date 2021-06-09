@@ -16,7 +16,7 @@ function errorHandler(data, next, err = null) {
 }
 
 //se buscan video juegos mediante algun filtro
-function findByFilter(query, res) {
+function findByFilter(query, res, next) {
   ModelVideoJuego.find(query).exec((err, items) => {
     if (err || !items) return errorHandler(items, next, err);
 
@@ -31,7 +31,7 @@ function getxGenero(req, res, next) {
   let genero = req.params.genero;
   let query = genero != "undefined" ? { genero: genero, disponible: true } : {};
 
-  findByFilter(query, res);
+  findByFilter(query, res, next);
 }
 
 /** Listar videoJuegos por clasificacion **/ //TODO agregar filtro de disponible
@@ -39,7 +39,7 @@ function getxClasificacion(req, res, next) {
   let clasificacion = req.params.clasificacion;
   let query = clasificacion != "undefined" ? { clasificacion } : {};
 
-  findByFilter(query, res);
+  findByFilter(query, res, next);
 }
 
 /** Listar videoJuegos por clasificacion **/ //TODO agregar filtro de disponible
@@ -47,7 +47,7 @@ function getxDistribuidor(req, res, next) {
   let distribuidor = req.params.distribuidor;
   let query = distribuidor != "undefined" ? { distribuidor } : {};
 
-  findByFilter(query, res);
+  findByFilter(query, res, next);
 }
 
 /** Listar videoJuegos por clasificacion **/ //TODO agregar filtro de disponible
@@ -55,7 +55,7 @@ function getxDesarrollador(req, res, next) {
   let desarrollador = req.params.desarrollador;
   let query = desarrollador != "undefined" ? { desarrollador } : {};
 
-  findByFilter(query, res);
+  findByFilter(query, res, next);
 }
 
 /** get video juego x Id **/
@@ -108,7 +108,7 @@ function guardar(req, res, next) {
 }
 
 /** Borrar videoJuego (no se elimina, solo se deja como no disponible)**/
-function borrar(req, res) {
+function borrar(req, res, next) {
   let id = req.params.idVideoJuego; // se busca el videojuego por su id
 
   let data = {

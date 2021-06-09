@@ -4,10 +4,12 @@ var Schema = mongoose.Schema;
 var schemaGenero = new Schema({
   nombre: {
     type: String,
-    unique: "xxxx"
+    unique: "xxxx",
+    required: true
   },
   descripcion: {
-    type: String
+    type: String,
+    required: true
   }
 });
 
