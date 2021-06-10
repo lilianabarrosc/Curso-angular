@@ -1,5 +1,12 @@
 var mongoose = require('mongoose');
 
+const {
+  validator_genero,
+    validator_clasificacion,
+    validator_distribuidor,
+    validator_desarrollador
+} = require('../validators/vVideoJuego');
+
 var Schema = mongoose.Schema;
 var schemaVideoJuego = new Schema({
   consola: {
@@ -40,30 +47,30 @@ var schemaVideoJuego = new Schema({
 });
 
 /** validaciones a referencias de genero, clasificacion, distribuidor, desarrollador **/
-schemaProducto.path('genero').validate(
+schemaVideoJuego.path('genero').validate(
   {
-    validator: genero,
+    validator: validator_genero,
     message : 'Genero indicado no Existe!'
   }
 );
 
-schemaProducto.path('clasificacion').validate(
+schemaVideoJuego.path('clasificacion').validate(
   {
-    validator: clasificacion,
+    validator: validator_clasificacion,
     message : 'Clasificacion indicado no Existe!'
   }
 );
 
-schemaProducto.path('distribuidor').validate(
+schemaVideoJuego.path('distribuidor').validate(
   {
-    validator: distribuidor,
+    validator: validator_distribuidor,
     message : 'Distribuidor indicado no Existe!'
   }
 );
 
-schemaProducto.path('desarrollador').validate(
+schemaVideoJuego.path('desarrollador').validate(
   {
-    validator: desarrollador,
+    validator: validator_desarrollador,
     message : 'Desarrollador indicado no Existe!'
   }
 );
