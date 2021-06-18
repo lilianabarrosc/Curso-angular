@@ -51,7 +51,7 @@ schemaUsuario.methods.addFavorite = function (docVideoJuego) {
 
   let newFavorite = [...this.favoritos];
 
-  if (index >= 0) {
+  if (index < 0) {
     newFavorite.push({
       id: docVideoJuego._id,
       nombre: docVideoJuego.nombre,
@@ -65,7 +65,7 @@ schemaUsuario.methods.addFavorite = function (docVideoJuego) {
   }
 
   this.favoritos = newFavorite;
-  return this.save();
+  return this.save() ? "Agregado a Favoritos!!!" : "No se pudo agregar a Favoritos X(";
 };
 
 schemaUsuario.methods.removeFavorite = function (docVideoJuego) {
@@ -81,7 +81,7 @@ schemaUsuario.methods.removeFavorite = function (docVideoJuego) {
     // si existe se elimina
     newFavorite.splice(index, 1);
     this.favoritos = newFavorite;
-    return this.save();
+    return this.save() ? "Eliminado de Favoritos!!!" : "No se pudo eliminar de Favoritos X(";;
   } else {
     console.log("No se encuentra el video juego en lista de favoritos");
     let err = new Error("No existe el video juego en lista de favoritos");
