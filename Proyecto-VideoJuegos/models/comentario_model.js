@@ -1,4 +1,6 @@
 var mongoose = require("mongoose");
+const { validator_usuario,
+  validator_videoJuego} = require('../validators/vComentario');
 
 var Schema = mongoose.Schema;
 var schemaComentario = new Schema({
@@ -31,22 +33,22 @@ var schemaComentario = new Schema({
 });
 
 /** validaciones a referencias de usuario y videoJuego **/
-schemaProducto.path('usuario').validate(
+schemaComentario.path('usuario.id').validate(
   {
-    validator: usuario,
+    validator: validator_usuario,
     message : 'Usuario debe existir!'
   }
 );
 
-schemaProducto.path('videoJuego').validate(
+schemaComentario.path('videoJuego.id').validate(
   {
-    validator: videoJuego,
+    validator: validator_videoJuego,
     message : 'Video Juego debe existir!'
   }
-);
+); 
 
 schemaComentario.methods.addUser = function (docUsuario) {
-  if (!this.usuario) {
+  if (JSON.stringify(this.usuario)=='{}') {
     this.usuario = {
       id: docUsuario._id,
       nombre_usuario: docUsuario.nombre_usuario
@@ -62,8 +64,8 @@ schemaComentario.methods.addUser = function (docUsuario) {
 };
 
 schemaComentario.methods.addVideoJuego = function (docVideoJuego) {
-  if (!this.usuario) {
-    this.usuario = {
+  if (JSON.stringify(this.videoJuego)=='{}') {
+    this.videoJuego = {
       id: docVideoJuego._id,
       nombre: docVideoJuego.nombre
     };
