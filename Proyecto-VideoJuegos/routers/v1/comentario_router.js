@@ -1,4 +1,5 @@
 const express = require("express");
+const { isAuth } = require('../../middleware/auth');
 
 const {
     listarPorVideoJuego,
@@ -9,8 +10,10 @@ const {
 
 const router = express.Router();
 
+router.all('/comentario/*',isAuth);
+
 router.get('/comentario/videoJuego/:videoJuegoId', listarPorVideoJuego);
-router.post('/comentario', guardar);
+router.post('/comentario', isAuth, guardar);
 router.delete('/comentario/:idComentario/usuario/:idUsuario', borrar);
 router.put('/comentario/:idComentario/usuario/:idUsuario', update);
 

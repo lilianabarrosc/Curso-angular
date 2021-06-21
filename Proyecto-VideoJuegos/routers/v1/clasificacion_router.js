@@ -1,4 +1,5 @@
 const express = require("express");
+const { isAuth, isAdmin } = require('../../middleware/auth');
 
 const {
   listar,
@@ -10,10 +11,12 @@ const {
 
 const router = express.Router();
 
+router.all('/clasificacion/*',isAuth);
+
 router.get('/clasificacion', listar); 
 router.get('/clasificacion/:id', getClasificacion);
-router.post('/clasificacion', guardar);
-router.delete('/clasificacion/:id', borrar);
-router.put('/clasificacion/:id', update);
+router.post('/clasificacion', isAuth, isAdmin, guardar);
+router.delete('/clasificacion/:id', isAdmin, borrar);
+router.put('/clasificacion/:id', isAdmin, update);
  
 module.exports = router;

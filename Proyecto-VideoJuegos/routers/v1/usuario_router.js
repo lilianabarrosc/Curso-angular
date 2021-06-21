@@ -1,4 +1,5 @@
 const express = require("express");
+const { isAuth, isAdmin } = require('../../middleware/auth');
 
 const {
   listar,
@@ -10,9 +11,11 @@ const {
 
 const router = express.Router();
 
-router.get("/usuario", listar);
+router.all('/usuario/*', isAuth, isAdmin);
+
+router.get("/usuario", isAuth, isAdmin, listar);
 router.get("/usuario/:id", getUsuario);
-router.post("/usuario", guardar);
+router.post("/usuario", isAuth, isAdmin, guardar);
 router.delete("/usuario/:id", borrar);
 router.put("/usuario/:id", update);
 

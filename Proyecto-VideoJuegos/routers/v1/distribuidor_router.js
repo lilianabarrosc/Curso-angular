@@ -1,4 +1,5 @@
 const express = require("express");
+const { isAuth, isAdmin } = require('../../middleware/auth');
 
 const {
     listar,
@@ -10,10 +11,12 @@ const {
 
 const router = express.Router();
 
+router.all('/distribuidor/*', isAuth);
+
 router.get('/distribuidor', listar); 
-router.get('/distribuidor/:id', getDistribuidor);
-router.post('/distribuidor', guardar);
-router.delete('/distribuidor/:id', borrar);
-router.put('/distribuidor/:id', update);
+router.get('/distribuidor/:id', isAdmin, getDistribuidor);
+router.post('/distribuidor', isAuth, isAdmin, guardar);
+router.delete('/distribuidor/:id', isAdmin, borrar);
+router.put('/distribuidor/:id', isAdmin, update);
  
 module.exports = router;

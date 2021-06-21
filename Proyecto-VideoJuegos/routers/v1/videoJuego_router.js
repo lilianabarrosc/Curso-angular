@@ -1,4 +1,5 @@
 const express = require("express");
+const { isAuth, isAdmin } = require('../../middleware/auth');
 
 const {
   getxGenero,
@@ -20,8 +21,8 @@ router.get("/videoJuego/distribuidor/:distribuidor", getxDistribuidor);
 router.get("/videoJuego/desarrollador/:desarrollador", getxDesarrollador);
 router.get("/videoJuego/:id", getVideoJuego);
 router.get("/videoJuego", listar);
-router.post("/videoJuego", guardar);
-router.delete("/videoJuego/:idVideoJuego", borrar);
-router.put("/videoJuego/:idVideoJuego", update);
+router.post("/videoJuego", isAuth, isAdmin, guardar);
+router.delete("/videoJuego/:idVideoJuego", isAuth, isAdmin, borrar);
+router.put("/videoJuego/:idVideoJuego", isAuth, isAdmin, update);
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const express = require("express");
+const { isAuth } = require('../../middleware/auth');
 
 const {
     agregarFavorito,
@@ -8,8 +9,10 @@ const {
 
 const router = express.Router();
 
-router.get('/favoritos/:idUsuario', listarPorUsuario); 
+router.all('/favoritos/*', isAuth);
+
+router.get('/favoritos/:idUsuario', listarPorUsuario);
 router.delete('/favoritos/videoJuego/:idVideoJuego/usuario/:idUsuario', eliminarFavorito);
-router.post('/favoritos', agregarFavorito);
- 
+router.post('/favoritos', isAuth, agregarFavorito);
+
 module.exports = router;

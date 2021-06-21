@@ -9,5 +9,6 @@ app.use( require('./distribuidor_controller') );
 app.use( require('./genero_controller') );
 app.use( require('./usuario_controller') );
 app.use( require('./videoJuego_controller') );
+app.use( require('./login_controller') );
 
 module.exports = app;
