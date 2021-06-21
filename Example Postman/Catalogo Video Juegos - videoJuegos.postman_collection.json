@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "7013c99b-284c-42fd-ab96-903a99091408",
+		"name": "Catalogo Video Juegos - videoJuegos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list videoJuegos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get videoJuegos x genero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego/genero/Estrategia",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego",
+						"genero",
+						"Estrategia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get videoJuegos x clasificacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego/clasificacion/Todos +10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego",
+						"clasificacion",
+						"Todos +10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get videoJuegos x distribuidor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego/distribuidor/Epic Games",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego",
+						"distribuidor",
+						"Epic Games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get videoJuegos x desarrollador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego/desarrollador/Epic Games",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego",
+						"desarrollador",
+						"Epic Games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar videoJuegos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"consola\": \"PlayStation\",\r\n    \"nombre\": \"Resident Evil Village2\",\r\n    \"genero\": \"Disparos\",\r\n    \"clasificacion\": \"Clasificación Pendiente\",\r\n    \"descripcion\": \"Resident Evil Village se desarrolla tres años después de los eventos de Resident Evil 7. Ethan Winters regresa como protagonista.​ Ethan ha estado viviendo con su esposa Mia y su hija recién nacida Rosemary (Rose). Gracias al agente de la BSAA Chris Redfield, Mia fue perdonada por su pasado terrorista en Las Conexiones, con la condición de que ella y su familia estarían permanentemente vigilados.\",\r\n    \"distribuidor\": \"Morimasa Sato\",\r\n    \"desarrollador\": \"Capcom\",\r\n    \"poster\": \"https://es.wikipedia.org/wiki/Resident_Evil_Village#/media/Archivo:Resident_Evil_8_Village_Logo.svg\",\r\n    \"disponible\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get videoJuego",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego/60c17609703f1e433871f4f2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego",
+						"60c17609703f1e433871f4f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar videoJuego",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"consola\": \"Xbox One\",\r\n    \"nombre\": \"Fortnite\",\r\n    \"genero\": \"Lucha\",\r\n    \"clasificacion\": \"Todos +10\",\r\n    \"descripcion\": \"Elige al héroe o heoína que quieras, únete a un equipo de hasta cuatro jugadores, reúne las herramientas necesarias para explorar el entorno y colabora para construir fuertes y armas para sobrevivir.\",\r\n    \"distribuidor\": \"Epic Games\",\r\n    \"desarrollador\": \"Epic Games\",\r\n    \"poster\": \"https://faros.hsjdbcn.org/sites/default/files/styles/shareimg/public/fortnite-portada_0.jpg?itok=mhRJrS-0\",\r\n    \"disponible\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego/60c17609703f1e433871f4f2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego",
+						"60c17609703f1e433871f4f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar videoJuegos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/videoJuego/60c17609703f1e433871f4f2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"videoJuego",
+						"60c17609703f1e433871f4f2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

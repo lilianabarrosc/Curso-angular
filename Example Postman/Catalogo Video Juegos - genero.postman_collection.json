@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "225d4b9c-f06c-4a69-9bfb-65d64f3b050c",
+		"name": "Catalogo Video Juegos - genero",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list genero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/genero",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"genero"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar genero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Disparos\",\r\n    \"descripcion\": \"Considerados a menudo como una gran subcategoría dentro del género de acción, en los videojuegos de disparos -también conocidos como shooters- el protagonista hace un uso continuado de armas de fuego para abrirse paso en el juego\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/genero",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"genero"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get genero",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/genero/60c0ee9764e812431495ab52",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"genero",
+						"60c0ee9764e812431495ab52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar genero",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Arcade - sub genero\",\r\n    \"descripcion\": \"Los videojuegos tipo arcade se caracterizan por su jugabilidad simple, repetitiva y de acción rápida. Más que un género en sí, se trata de un calificativo bajo el que se engloban todos aquellos juegos típicos de las máquinas recreativas (Yo contra el barrio, matamarcianos, plataformas). Tuvieron su época dorada en la década de 1980\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/genero/60c0ee9764e812431495ab52",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"genero",
+						"60c0ee9764e812431495ab52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar genero",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/genero/60c0ee9764e812431495ab52",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"genero",
+						"60c0ee9764e812431495ab52"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

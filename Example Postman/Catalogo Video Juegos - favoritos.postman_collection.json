@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "0ebb0ce1-38ed-4ea0-857f-a333f53800ce",
+		"name": "Catalogo Video Juegos - favoritos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list favoritos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/favoritos/60c16803e159cf3d84b6ce4b",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"favoritos",
+						"60c16803e159cf3d84b6ce4b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar a favoritos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idVideoJuego\":\"60caa8f2238fe92d10eb9362\",\r\n    \"idUsuario\": \"60c16803e159cf3d84b6ce4b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/favoritos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"favoritos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar de favoritos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/favoritos/videoJuego/60caa8f2238fe92d10eb9362/usuario/60c16803e159cf3d84b6ce4b",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"favoritos",
+						"videoJuego",
+						"60caa8f2238fe92d10eb9362",
+						"usuario",
+						"60c16803e159cf3d84b6ce4b"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

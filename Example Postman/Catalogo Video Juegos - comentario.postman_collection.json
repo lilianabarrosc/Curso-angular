@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "da92179a-a4d8-4d39-a8a6-5a38141c8aec",
+		"name": "Catalogo Video Juegos - comentario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list comentario por video juego",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOiI2MGNlMTYwZmY3ODgxMTI1N2M5MDQ2ZjgiLCJyb2xlIjoiVVNFUl9ST0xFIiwiaWF0IjoxNjI0MjI0OTM1LCJleHAiOjE2MjQyMjUyMzV9.7fywH_KuUv9wT5rLXJqsdtKCFzxU_jcs68N2LNESUhU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/comentario/videoJuego/60ce1f14317e1904f0d66281",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						"videoJuego",
+						"60ce1f14317e1904f0d66281"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar comentario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idVideoJuego\": \"60ce166cf78811257c9046fa\",\r\n    \"idUsuario\": \"60ce160ff78811257c9046f8\",\r\n    \"descripcion\": \"Excelente jueguo, muy entretenido\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/comentario",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar comentario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\":\"Excelente juego, muy entrete!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/comentario/60ce1d412ca647089c092e52/usuario/60ce160ff78811257c9046f8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						"60ce1d412ca647089c092e52",
+						"usuario",
+						"60ce160ff78811257c9046f8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar comentario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/comentario/60ce1d412ca647089c092e52/usuario/60ce160ff78811257c9046f8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comentario",
+						"60ce1d412ca647089c092e52",
+						"usuario",
+						"60ce160ff78811257c9046f8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

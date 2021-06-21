@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "2c021be9-f37c-4c5a-a4d3-a7ef75ace0f0",
+		"name": "Catalogo Video Juegos - clasificacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list clasificaciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/clasificacion",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clasificacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar clasificacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Clasificación Pendiente\",\r\n    \"descripcion\": \"No se ha asignado una clasificacion\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/clasificacion",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clasificacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get clasificacion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/clasificacion/60c01d1ad65a4931f0165b15",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clasificacion",
+						"60c01d1ad65a4931f0165b15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar clasificacion",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Clasificación Pendiente\",\r\n    \"descripcion\": \"No se ha asignado una clasificacion final\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/clasificacion/60c01d1ad65a4931f0165b15",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clasificacion",
+						"60c01d1ad65a4931f0165b15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar clasificacion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/clasificacion/60c01d1ad65a4931f0165b15",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clasificacion",
+						"60c01d1ad65a4931f0165b15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

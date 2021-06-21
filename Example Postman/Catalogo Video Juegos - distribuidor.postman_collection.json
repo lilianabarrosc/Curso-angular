@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "2fd01548-c7e2-414b-a9c6-445092167db5",
+		"name": "Catalogo Video Juegos - distribuidor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list distribuidores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/distribuidor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"distribuidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "guardar distribuidor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Morimasa Sato\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/distribuidor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"distribuidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get distribuidor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/distribuidor/60c0e8c264e812431495ab4d",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"distribuidor",
+						"60c0e8c264e812431495ab4d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar distribuidor",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Mojang\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/distribuidor/60c0e8c264e812431495ab4d",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"distribuidor",
+						"60c0e8c264e812431495ab4d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar distribuidor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/distribuidor/60c0e8c264e812431495ab4d",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"distribuidor",
+						"60c0e8c264e812431495ab4d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
