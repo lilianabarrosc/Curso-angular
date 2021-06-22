@@ -15,18 +15,18 @@ https://documenter.getpostman.com/view/16313346/TzeahQnQ
 
 Restricciones por roles:
 
-1.- Clasificacion
-    ⋅⋅* list clasificaciones --> free
-    ⋅⋅* get clasificacion --> necesita token de usuario
-    ⋅⋅* guardar clasificacion --> necesita token de usuario admin
-    ⋅⋅* eliminar clasificacion --> necesita token de usuario admin 
-    ⋅⋅* actualizar clasificacion --> necesita token de usuario admin
+1. Clasificacion
+   - list clasificaciones --> free
+   - get clasificacion --> necesita token de usuario
+   - guardar clasificacion --> necesita token de usuario admin
+   - eliminar clasificacion --> necesita token de usuario admin 
+   - actualizar clasificacion --> necesita token de usuario admin
 
-2.- Comentario
-    ⋅⋅* list comentario por video juego --> necesita token de usuario
-    ⋅⋅* guardar comentario --> necesita token de usuario
-    ⋅⋅* eliminar comentario --> necesita token de usuario 
-    ⋅⋅* actualizar comentario --> necesita token de usuario
+2. Comentario
+   ⋅⋅* list comentario por video juego --> necesita token de usuario
+   ⋅⋅* guardar comentario --> necesita token de usuario
+   ⋅⋅* eliminar comentario --> necesita token de usuario 
+   ⋅⋅* actualizar comentario --> necesita token de usuario
 
 3.- Desarrollador
     ⋅⋅* list desarrolladores --> free
